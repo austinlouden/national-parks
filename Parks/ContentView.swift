@@ -10,36 +10,7 @@ import Combine
 import SwiftUI
 import TinyNetworking
 
-struct Park: Decodable, Equatable, Identifiable {
-    let id: String
-    let fullName: String
-}
-
-struct Parks: Decodable, Equatable {
-    let total: String
-    let limit: String
-    let start: String
-    let data: Array<Park>
-}
-
-let loadParks = Endpoint<Parks>(json: .get, url: URL(string: "https://developer.nps.gov/api/v1/parks?parkCode=acad,dena&api_key=")!)
-
-final class Resource<A>: ObservableObject {
-    let endpoint: Endpoint<A>
-    @Published var value: A?
-    init(endpoint: Endpoint<A>) {
-        self.endpoint = endpoint
-        load()
-    }
-
-    func load() {
-        URLSession.shared.load(endpoint) { (result) in
-            DispatchQueue.main.async {
-                self.value = try? result.get()
-            }
-        }
-    }
-}
+let loadParks = Endpoint<ParksResponse>(json: .get, url: URL(string: "https://developer.nps.gov/api/v1/parks?parkCode=acad&api_key=")!)
 
 struct ParkList: View {
     var parks: Array<Park>
@@ -49,8 +20,13 @@ struct ParkList: View {
     }
 
     var body: some View {
-        ForEach(self.parks) { park in
-            Text(park.fullName)
+        List(self.parks) { park in
+            VStack(alignment: .leading) {
+                Text(park.fullName)
+                    .font(.headline)
+                Text(park.description)
+                    .font(.body)
+            }
         }
     }
 }
@@ -60,10 +36,16 @@ struct ContentView: View {
     var body: some View {
         Group {
             if resource.value == nil {
-                Text("Loading")
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                VStack {
+                    Text("Loading")
+                    ActivityIndicatorView()
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {
-                ParkList(parks: resource.value!.data)
+                NavigationView {
+                    ParkList(parks: resource.value!.data)
+                        .navigationBarTitle("Parks", displayMode: .large)
+                }
             }
         }
     }

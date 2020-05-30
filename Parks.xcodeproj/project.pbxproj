@@ -15,6 +15,10 @@
 		28C11FC02480D22A00B2047D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28C11FBE2480D22A00B2047D /* LaunchScreen.storyboard */; };
 		28C11FCB2480D22A00B2047D /* ParksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C11FCA2480D22A00B2047D /* ParksTests.swift */; };
 		28C11FD72480D29700B2047D /* TinyNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 28C11FD62480D29700B2047D /* TinyNetworking */; };
+		28C11FDA2481CCBE00B2047D /* Park.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C11FD92481CCBE00B2047D /* Park.swift */; };
+		28C11FDC2481CCEA00B2047D /* ParksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C11FDB2481CCEA00B2047D /* ParksResponse.swift */; };
+		28C11FDF2481CE0B00B2047D /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C11FDE2481CE0B00B2047D /* Resource.swift */; };
+		28C11FE12481DE5300B2047D /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C11FE02481DE5300B2047D /* ActivityIndicatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +43,10 @@
 		28C11FC62480D22A00B2047D /* ParksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28C11FCA2480D22A00B2047D /* ParksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParksTests.swift; sourceTree = "<group>"; };
 		28C11FCC2480D22A00B2047D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28C11FD92481CCBE00B2047D /* Park.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Park.swift; sourceTree = "<group>"; };
+		28C11FDB2481CCEA00B2047D /* ParksResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParksResponse.swift; sourceTree = "<group>"; };
+		28C11FDE2481CE0B00B2047D /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		28C11FE02481DE5300B2047D /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +89,8 @@
 		28C11FB22480D22900B2047D /* Parks */ = {
 			isa = PBXGroup;
 			children = (
+				28C11FDD2481CDF900B2047D /* Core */,
+				28C11FD82481CC3D00B2047D /* Models */,
 				28C11FB32480D22900B2047D /* AppDelegate.swift */,
 				28C11FB52480D22900B2047D /* SceneDelegate.swift */,
 				28C11FB72480D22900B2047D /* ContentView.swift */,
@@ -107,6 +117,24 @@
 				28C11FCC2480D22A00B2047D /* Info.plist */,
 			);
 			path = ParksTests;
+			sourceTree = "<group>";
+		};
+		28C11FD82481CC3D00B2047D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				28C11FD92481CCBE00B2047D /* Park.swift */,
+				28C11FDB2481CCEA00B2047D /* ParksResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		28C11FDD2481CDF900B2047D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				28C11FDE2481CE0B00B2047D /* Resource.swift */,
+				28C11FE02481DE5300B2047D /* ActivityIndicatorView.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,9 +244,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28C11FDC2481CCEA00B2047D /* ParksResponse.swift in Sources */,
 				28C11FB42480D22900B2047D /* AppDelegate.swift in Sources */,
 				28C11FB62480D22900B2047D /* SceneDelegate.swift in Sources */,
+				28C11FDF2481CE0B00B2047D /* Resource.swift in Sources */,
 				28C11FB82480D22900B2047D /* ContentView.swift in Sources */,
+				28C11FDA2481CCBE00B2047D /* Park.swift in Sources */,
+				28C11FE12481DE5300B2047D /* ActivityIndicatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
